@@ -2,13 +2,17 @@ const mysql = require('mysql2/promise');
 
 // Create a reusable connection pool
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',       // Replace with your MySQL username
-    password: 'magudi',       // Replace with your MySQL password
-    database: 'sample_erp', // Replace with your database name
+    host: 'mysql-320a721-rajeevmagudi-4817.c.aivencloud.com',
+    user: 'avnadmin',       
+    password: 'AVNS_alxpjo8j1_KQWnv2lqL',       
+    database: 'defaultdb', 
+    port: 12872, // It is good practice to explicitly include your port
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    ssl: {
+        rejectUnauthorized: true // Enforces the secure SSL mode required by Aiven
+    }
 });
 
 // Test the connection right away

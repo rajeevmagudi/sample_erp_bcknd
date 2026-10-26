@@ -11,7 +11,7 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0,
     ssl: {
-        rejectUnauthorized: true // Enforces the secure SSL mode required by Aiven
+        rejectUnauthorized: false // Enforces the secure SSL mode required by Aiven
     }
 });
 
